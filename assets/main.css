@@ -147,7 +147,7 @@ button:active:not([disabled]) {
         background-color: var(--secondary);
     }
 
-    img {
+    svg {
         border: solid 2px var(--tertiary);
     }
 }

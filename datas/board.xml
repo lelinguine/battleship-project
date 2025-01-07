@@ -3,18 +3,18 @@
 
 <grille taille="10">
     <bateau type="porte-avions">
-        <case ligne="1" colonne="A"/>
-        <case ligne="1" colonne="B"/>
-        <case ligne="1" colonne="C"/>
-        <case ligne="1" colonne="D"/>
-        <case ligne="1" colonne="E"/>
+        <case ligne="A" colonne="1"/>
+        <case ligne="B" colonne="2"/>
+        <case ligne="C" colonne="3"/>
+        <case ligne="D" colonne="4"/>
+        <case ligne="E" colonne="5"/>
     </bateau>
     <bateau type="croiseur">
-        <case ligne="3" colonne="H"/>
-        <case ligne="4" colonne="H"/>
-        <case ligne="5" colonne="H"/>
-        <case ligne="6" colonne="H"/>
+        <case ligne="C" colonne="8"/>
+        <case ligne="D" colonne="8"/>
+        <case ligne="E" colonne="8"/>
+        <case ligne="F" colonne="8"/>
     </bateau>
-    <case ligne="2" colonne="D" etat="eau"/>
-    <case ligne="3" colonne="H" etat="touché"/>
+    <case ligne="E" colonne="4" etat="eau"/>
+    <case ligne="C" colonne="8" etat="touché"/>
 </grille>

@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="770" height="770" viewBox="0 0 770 770">
     <!-- Fond blanc pour la grille -->
-    <rect width="770" height="770" fill="white" />
+    <rect width="770" height="770" fill="white"/>
 
     <!-- Lignes de la grille -->
     <g stroke="black" stroke-width="4">
@@ -34,7 +34,7 @@
     </g>
 
     <!-- Lettres pour la première colonne -->
-    <g font-family="Arial" font-size="20" fill="black" text-anchor="middle" dominant-baseline="middle">
+    <g font-family="Arial" font-weight="bold" font-size="20" fill="black" text-anchor="middle" dominant-baseline="middle">
         <text x="35" y="105">A</text>
         <text x="35" y="175">B</text>
         <text x="35" y="245">C</text>
@@ -48,7 +48,7 @@
     </g>
 
     <!-- Chiffres pour la première ligne -->
-    <g font-family="Arial" font-size="20" fill="black" text-anchor="middle" dominant-baseline="middle">
+    <g font-family="Arial" font-weight="bold" font-size="20" fill="black" text-anchor="middle" dominant-baseline="middle">
         <text x="105" y="35">1</text>
         <text x="175" y="35">2</text>
         <text x="245" y="35">3</text>
@@ -60,11 +60,5 @@
         <text x="665" y="35">9</text>
         <text x="735" y="35">10</text>
         <text x="805" y="35">11</text>
-    </g>
-
-    <!-- Touché ou coulé -->
-    <g font-family="Arial" font-size="20" fill="black" text-anchor="middle" dominant-baseline="middle">
-        <text x="175" y="175">X</text>
-        <text x="245" y="175">O</text>
     </g>
 </svg>
