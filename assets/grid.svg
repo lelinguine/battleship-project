@@ -61,4 +61,9 @@
         <text x="735" y="35">10</text>
         <text x="805" y="35">11</text>
     </g>
+
+    <!-- Croix -->
+    <g font-family="Arial" font-size="20" fill="black" text-anchor="middle" dominant-baseline="middle">
+        <text x="175" y="175">X</text>
+    </g>
 </svg>

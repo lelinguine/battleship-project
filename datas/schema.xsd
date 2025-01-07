@@ -15,7 +15,6 @@
                             </xs:element>
                         </xs:sequence>
                         <xs:attribute name="type" type="xs:string" use="required"/>
-                        <xs:attribute name="id" type="xs:string" use="required"/>
                     </xs:complexType>
                 </xs:element>
                 <xs:element name="case" maxOccurs="unbounded">

@@ -2,14 +2,14 @@
 <?xml-stylesheet type="text/xsl" href="schema.xsl"?>
 
 <grille taille="10">
-    <bateau type="porte-avions" id="PA1">
+    <bateau type="porte-avions">
         <case ligne="1" colonne="A"/>
         <case ligne="1" colonne="B"/>
         <case ligne="1" colonne="C"/>
         <case ligne="1" colonne="D"/>
         <case ligne="1" colonne="E"/>
     </bateau>
-    <bateau type="croiseur" id="C1">
+    <bateau type="croiseur">
         <case ligne="3" colonne="H"/>
         <case ligne="4" colonne="H"/>
         <case ligne="5" colonne="H"/>
