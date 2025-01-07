@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-stylesheet type="text/xsl" href=".xsl"?>
+<?xml-stylesheet type="text/xsl" href="schema.xsl"?>
 
-<!-- Exemple XML - Grille valide remplie -->
 <grille taille="10">
     <bateau type="porte-avions" id="PA1">
         <case ligne="1" colonne="A"/>

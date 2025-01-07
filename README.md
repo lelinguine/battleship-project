@@ -1,3 +1,3 @@
 # battleship-project
 
-xsltproc -o output.html .xsl .xml
+xsltproc -o output.html input.xsl ./datas/board.xml
