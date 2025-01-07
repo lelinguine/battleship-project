@@ -25,7 +25,6 @@
                     </xs:complexType>
                 </xs:element>
             </xs:sequence>
-            <xs:attribute name="taille" type="xs:positiveInteger" use="required"/>
         </xs:complexType>
     </xs:element>
 </xs:schema>

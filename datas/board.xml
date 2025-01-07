@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-stylesheet type="text/xsl" href="schema.xsl"?>
 
-<grille taille="10">
+<grille>
     <!-- Porte-avions (5 cases) -->
     <bateau type="porte-avions">
         <case ligne="A" colonne="1"/>
@@ -52,16 +52,52 @@
         <case ligne="D" colonne="6"/>
     </bateau>
     <bateau type="sous-marin">
-        <case ligne="F" colonne="1"/>
-        <case ligne="G" colonne="1"/>
+        <case ligne="J" colonne="5"/>
+        <case ligne="J" colonne="6"/>
     </bateau>
     <bateau type="sous-marin">
         <case ligne="I" colonne="6"/>
         <case ligne="J" colonne="6"/>
     </bateau>
 
-    <!-- Cases d'état -->
-    <case ligne="E" colonne="4"/>
+    <!-- Cases d'état pour couler tout les bateaux -->
+    <case ligne="A" colonne="1"/>
+    <!-- <case ligne="B" colonne="1"/>
+    <case ligne="C" colonne="1"/>
+    <case ligne="D" colonne="1"/> -->
+    <case ligne="E" colonne="1"/>
+    
     <case ligne="C" colonne="8"/>
-
+    <case ligne="D" colonne="8"/>
+    <case ligne="E" colonne="8"/>
+    <case ligne="F" colonne="8"/>
+    
+    <case ligne="H" colonne="3"/>
+    <!-- <case ligne="H" colonne="4"/>
+    <case ligne="H" colonne="5"/>
+    <case ligne="H" colonne="6"/>
+    
+    <case ligne="B" colonne="7"/>
+    <case ligne="C" colonne="7"/>
+    <case ligne="D" colonne="7"/>
+    
+    <case ligne="G" colonne="2"/>
+    <case ligne="G" colonne="3"/>
+    <case ligne="G" colonne="4"/>
+    
+    <case ligne="J" colonne="9"/>
+    <case ligne="J" colonne="10"/>
+    <case ligne="I" colonne="10"/>
+    
+    <case ligne="A" colonne="9"/>
+    <case ligne="B" colonne="9"/>
+    
+    <case ligne="D" colonne="5"/>
+    <case ligne="D" colonne="6"/>
+    
+    <case ligne="J" colonne="5"/>
+    <case ligne="J" colonne="6"/>
+    
+    <case ligne="I" colonne="6"/>
+    <case ligne="J" colonne="6"/> -->
 </grille>

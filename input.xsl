@@ -66,7 +66,6 @@
 
                                 </xsl:for-each>
 
-
                                 <!-- Affichage des bateaux -->
                                 <!-- <xsl:for-each select="grille/bateau/case">
                                     <xsl:variable name="ligne" select="@ligne"/>
@@ -93,18 +92,37 @@
                                 </xsl:for-each> -->
                             </svg>
 
+                            <!-- Afficher les bateaux touchés ou coulés -->
+                            <p>
+                                <xsl:for-each select="grille/bateau">
+                                    <!-- Sélectionner les cases touchées du bateau -->
+                                    <xsl:variable name="casesTouchees" select="case[@ligne = /grille/case/@ligne and @colonne = /grille/case/@colonne]" />
+
+                                    <xsl:choose>
+                                        <!-- Si toutes les cases sont touchées, le bateau est coulé -->
+                                        <xsl:when test="count(case) = count($casesTouchees)">
+                                            Coulé [<xsl:value-of select="@type" />];
+                                        </xsl:when>
+                                        <!-- Si au moins une case est touchée mais pas toutes -->
+                                        <xsl:when test="count($casesTouchees) > 0">
+                                            Touché [<xsl:value-of select="@type"/>];
+                                        </xsl:when>
+                                    </xsl:choose>
+                                </xsl:for-each>
+                            </p>
+                
                             <xsl:variable name="grille-valide">
                                 <!-- Vérification de la validité de la grille -->
                                 <xsl:choose>
                                     <!-- Vérification s'il y a bien tous les bateaux de la flotte -->
                                     <xsl:when test="not(grille/bateau[@type = 'porte-avions']) or grille/bateau[@type = 'porte-avions'][count(case) != 5]">
-                                        <xsl:value-of select="' Erreur [Porte-avions]'" />
+                                        <xsl:value-of select="'Erreur [Porte-avions]'" />
                                     </xsl:when>
                                     <xsl:when test="count(grille/bateau[@type = 'croiseur']) != 2 or grille/bateau[@type = 'croiseur'][count(case) != 4]">
                                         <xsl:value-of select="'Erreur [Croiseur]'" />
                                     </xsl:when>
                                     <xsl:when test="count(grille/bateau[@type = 'contre-torpilleur']) != 3 or grille/bateau[@type = 'contre-torpilleur'][count(case) != 3]">
-                                        <xsl:value-of select="'Erreur [Contre-torpilleur].'" />
+                                        <xsl:value-of select="'Erreur [Contre-torpilleur]'" />
                                     </xsl:when>
                                     <xsl:when test="count(grille/bateau[@type = 'sous-marin']) != 4 or grille/bateau[@type = 'sous-marin'][count(case) != 2]">
                                         <xsl:value-of select="'Erreur [Sous-marin]'" />
@@ -113,17 +131,40 @@
                                     <xsl:when test="grille/bateau[count(case) &lt; 1 or count(case) &gt; 5]">
                                         <xsl:value-of select="'Erreur [Inconnu]'" />
                                     </xsl:when>
+                                    <!-- Vérification des coordonnées des cases (Out of Bounds) -->
+                                    <xsl:when test="grille/bateau/case[
+                                        not(substring(@ligne, 1, 1) = 'A' or substring(@ligne, 1, 1) = 'B' or 
+                                            substring(@ligne, 1, 1) = 'C' or substring(@ligne, 1, 1) = 'D' or 
+                                            substring(@ligne, 1, 1) = 'E' or substring(@ligne, 1, 1) = 'F' or 
+                                            substring(@ligne, 1, 1) = 'G' or substring(@ligne, 1, 1) = 'H' or 
+                                            substring(@ligne, 1, 1) = 'I' or substring(@ligne, 1, 1) = 'J') or
+                                        not(number(@colonne) = number(@colonne)) or 
+                                        number(@colonne) &lt; 1 or number(@colonne) &gt; 10]">
+                                        <xsl:value-of select="'Erreur [Out of Bounds]'" />
+                                    </xsl:when>
                                 </xsl:choose>
                             </xsl:variable>
 
                             <xsl:variable name="affichage-grille">
                                 <!-- Si la grille est invalide, afficher le message, sinon masquer -->
                                 <xsl:choose>
-                                    <xsl:when test="not(grille/bateau[@type = 'porte-avions']) or grille/bateau[@type = 'porte-avions'][count(case) != 5]
-                                    or count(grille/bateau[@type = 'croiseur']) != 2 or grille/bateau[@type = 'croiseur'][count(case) != 4]
-                                    or count(grille/bateau[@type = 'contre-torpilleur']) != 3 or grille/bateau[@type = 'contre-torpilleur'][count(case) != 3]
-                                    or count(grille/bateau[@type = 'sous-marin']) != 4 or grille/bateau[@type = 'sous-marin'][count(case) != 2]
-                                    or grille/bateau[count(case) &lt; 1 or count(case) &gt; 5]">
+                                    <xsl:when test="
+                                        not(grille/bateau[@type = 'porte-avions']) or grille/bateau[@type = 'porte-avions'][count(case) != 5]
+                                        or count(grille/bateau[@type = 'croiseur']) != 2 or grille/bateau[@type = 'croiseur'][count(case) != 4]
+                                        or count(grille/bateau[@type = 'contre-torpilleur']) != 3 or grille/bateau[@type = 'contre-torpilleur'][count(case) != 3]
+                                        or count(grille/bateau[@type = 'sous-marin']) != 4 or grille/bateau[@type = 'sous-marin'][count(case) != 2]
+                                        or grille/bateau[count(case) &lt; 1 or count(case) &gt; 5]
+                                        or grille/bateau/case[
+                                            not(substring(@ligne, 1, 1) = 'A' or substring(@ligne, 1, 1) = 'B' or 
+                                                substring(@ligne, 1, 1) = 'C' or substring(@ligne, 1, 1) = 'D' or 
+                                                substring(@ligne, 1, 1) = 'E' or substring(@ligne, 1, 1) = 'F' or 
+                                                substring(@ligne, 1, 1) = 'G' or substring(@ligne, 1, 1) = 'H' or 
+                                                substring(@ligne, 1, 1) = 'I' or substring(@ligne, 1, 1) = 'J')
+                                            or not(number(@colonne) = number(@colonne)) 
+                                            or number(@colonne) &lt; 1 
+                                            or number(@colonne) &gt; 10
+                                        ]
+                                    ">
                                         <xsl:value-of select="'display: flex;'" />
                                     </xsl:when>
                                 </xsl:choose>
