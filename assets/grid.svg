@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="770" height="770" viewBox="0 0 770 770">
+    <!-- Fond blanc pour la grille -->
+    <rect width="770" height="770" fill="white" />
+
+    <!-- Lignes de la grille -->
+    <g stroke="black" stroke-width="4">
+        <!-- Lignes horizontales -->
+        <line x1="0" y1="0" x2="770" y2="0" />
+        <line x1="0" y1="70" x2="770" y2="70" />
+        <line x1="0" y1="140" x2="770" y2="140" />
+        <line x1="0" y1="210" x2="770" y2="210" />
+        <line x1="0" y1="280" x2="770" y2="280" />
+        <line x1="0" y1="350" x2="770" y2="350" />
+        <line x1="0" y1="420" x2="770" y2="420" />
+        <line x1="0" y1="490" x2="770" y2="490" />
+        <line x1="0" y1="560" x2="770" y2="560" />
+        <line x1="0" y1="630" x2="770" y2="630" />
+        <line x1="0" y1="700" x2="770" y2="700" />
+        <line x1="0" y1="770" x2="770" y2="770" />
+
+        <!-- Lignes verticales -->
+        <line x1="0" y1="0" x2="0" y2="770" />
+        <line x1="70" y1="0" x2="70" y2="770" />
+        <line x1="140" y1="0" x2="140" y2="770" />
+        <line x1="210" y1="0" x2="210" y2="770" />
+        <line x1="280" y1="0" x2="280" y2="770" />
+        <line x1="350" y1="0" x2="350" y2="770" />
+        <line x1="420" y1="0" x2="420" y2="770" />
+        <line x1="490" y1="0" x2="490" y2="770" />
+        <line x1="560" y1="0" x2="560" y2="770" />
+        <line x1="630" y1="0" x2="630" y2="770" />
+        <line x1="700" y1="0" x2="700" y2="770" />
+        <line x1="770" y1="0" x2="770" y2="770" />
+    </g>
+
+    <!-- Lettres pour la première colonne -->
+    <g font-family="Arial" font-size="20" fill="black" text-anchor="middle" dominant-baseline="middle">
+        <text x="35" y="105">A</text>
+        <text x="35" y="175">B</text>
+        <text x="35" y="245">C</text>
+        <text x="35" y="315">D</text>
+        <text x="35" y="385">E</text>
+        <text x="35" y="455">F</text>
+        <text x="35" y="525">G</text>
+        <text x="35" y="595">H</text>
+        <text x="35" y="665">I</text>
+        <text x="35" y="735">J</text>
+    </g>
+
+    <!-- Chiffres pour la première ligne -->
+    <g font-family="Arial" font-size="20" fill="black" text-anchor="middle" dominant-baseline="middle">
+        <text x="105" y="35">1</text>
+        <text x="175" y="35">2</text>
+        <text x="245" y="35">3</text>
+        <text x="315" y="35">4</text>
+        <text x="385" y="35">5</text>
+        <text x="455" y="35">6</text>
+        <text x="525" y="35">7</text>
+        <text x="595" y="35">8</text>
+        <text x="665" y="35">9</text>
+        <text x="735" y="35">10</text>
+        <text x="805" y="35">11</text>
+    </g>
+</svg>

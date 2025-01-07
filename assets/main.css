@@ -146,6 +146,10 @@ button:active:not([disabled]) {
         border-collapse: collapse;
         background-color: var(--secondary);
     }
+
+    img {
+        border: solid 2px var(--tertiary);
+    }
 }
 
 td {

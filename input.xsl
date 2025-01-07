@@ -34,7 +34,13 @@
 
 
 
-                    
+
+
+
+
+
+                        <img src="./assets/grid.svg"/>
+
                     
                     
                     
@@ -44,9 +50,9 @@
                     </div>
 
                     
-                    <!-- <div id="context"><p>Bad board configuration!</p></div>
+                    <div id="context"><p>Bad board configuration!</p></div>
                     <div id="context"><p>Player wins!</p></div>
-                    <div id="context"><p>Player loose!</p></div> -->
+                    <div id="context"><p>Player loose!</p></div>
                 </div>
 
 
