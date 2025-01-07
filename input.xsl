@@ -26,7 +26,7 @@
                                 <xsl:for-each select="grille/case">
                                     <xsl:variable name="ligne" select="@ligne"/>
                                     <xsl:variable name="colonne" select="@colonne"/>
-                                    <xsl:variable name="etat" select="@etat"/>
+                                    
                                     <!-- Convertir la ligne de A-J en 1-10 -->
                                     <xsl:variable name="ligneInt">
                                         <xsl:choose>
@@ -42,23 +42,30 @@
                                             <xsl:when test="$ligne = 'J'">10</xsl:when>
                                         </xsl:choose>
                                     </xsl:variable>
-                                    <!-- Calculer les coordonnées, en tenant compte des indices (1-10 et A-J) -->
+
+                                    <!-- Calculer les coordonnées -->
                                     <xsl:variable name="x" select="($colonne) * 70"/>
                                     <xsl:variable name="y" select="($ligneInt) * 70"/>
-                                    <!-- Affichage des symboles pour "touché", "eau" et autres -->
+
+                                    <!-- Vérifier si la case touche un bateau -->
+                                    <xsl:variable name="caseToucheBateau" select="//bateau/case[@ligne = $ligne and @colonne = $colonne]"/>
+
+                                    <!-- Affichage des symboles pour "touché" ou "eau" -->
                                     <g font-family="Arial" font-weight="bold" font-size="20" fill="black" text-anchor="middle" dominant-baseline="middle">
                                         <xsl:choose>
-                                            <!-- Si l'état est "touché", afficher un "X" -->
-                                            <xsl:when test="$etat = 'touché'">
-                                                <text x="{$x + 35}" y="{$y + 35}">X</text>
+                                            <!-- Si la case touche un bateau (on vérifie si la variable contient des éléments) -->
+                                            <xsl:when test="count($caseToucheBateau) > 0">
+                                                <text x="{$x + 35}" y="{$y + 35}">X</text> <!-- Affiche un "X" pour un bateau touché -->
                                             </xsl:when>
-                                            <!-- Si l'état est "eau", afficher un "O" -->
-                                            <xsl:when test="$etat = 'eau'">
-                                                <text x="{$x + 35}" y="{$y + 35}">O</text>
-                                            </xsl:when>
+                                            <!-- Si la case n'a pas de bateau (eau) -->
+                                            <xsl:otherwise>
+                                                <text x="{$x + 35}" y="{$y + 35}">O</text> <!-- Affiche un "O" pour une case d'eau -->
+                                            </xsl:otherwise>
                                         </xsl:choose>
                                     </g>
+
                                 </xsl:for-each>
+
 
                                 <!-- Affichage des bateaux -->
                                 <!-- <xsl:for-each select="grille/bateau/case">

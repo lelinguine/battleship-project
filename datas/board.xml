@@ -61,7 +61,7 @@
     </bateau>
 
     <!-- Cases d'état -->
-    <case ligne="E" colonne="4" etat="eau"/>
-    <case ligne="C" colonne="8" etat="touché"/>
+    <case ligne="E" colonne="4"/>
+    <case ligne="C" colonne="8"/>
 
 </grille>
