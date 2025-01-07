@@ -1,6 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-stylesheet type="text/xsl" href="style.xsl"?>
+<?xml-stylesheet type="text/xsl" href=".xsl"?>
 
-<Main>
-  
-</Main>
+<!-- Exemple XML - Grille valide remplie -->
+<grille taille="10">
+    <bateau type="porte-avions" id="PA1">
+        <case ligne="1" colonne="A"/>
+        <case ligne="1" colonne="B"/>
+        <case ligne="1" colonne="C"/>
+        <case ligne="1" colonne="D"/>
+        <case ligne="1" colonne="E"/>
+    </bateau>
+    <bateau type="croiseur" id="C1">
+        <case ligne="3" colonne="H"/>
+        <case ligne="4" colonne="H"/>
+        <case ligne="5" colonne="H"/>
+        <case ligne="6" colonne="H"/>
+    </bateau>
+    <case ligne="2" colonne="D" etat="eau"/>
+    <case ligne="3" colonne="H" etat="touché"/>
+</grille>

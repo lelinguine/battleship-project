@@ -1,9 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-    
-    <xsd:element name="main">
-
-    </xsd:element>
-
-</xsd:schema>
+<!-- Schéma XSD -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name="grille">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="bateau" maxOccurs="unbounded">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="case" maxOccurs="unbounded">
+                                <xs:complexType>
+                                    <xs:attribute name="ligne" type="xs:positiveInteger" use="required"/>
+                                    <xs:attribute name="colonne" type="xs:string" use="required"/>
+                                </xs:complexType>
+                            </xs:element>
+                        </xs:sequence>
+                        <xs:attribute name="type" type="xs:string" use="required"/>
+                        <xs:attribute name="id" type="xs:string" use="required"/>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="case" maxOccurs="unbounded">
+                    <xs:complexType>
+                        <xs:attribute name="ligne" type="xs:positiveInteger" use="required"/>
+                        <xs:attribute name="colonne" type="xs:string" use="required"/>
+                        <xs:attribute name="etat" type="xs:string" use="required"/>
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+            <xs:attribute name="taille" type="xs:positiveInteger" use="required"/>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>
