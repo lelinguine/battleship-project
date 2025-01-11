@@ -62,9 +62,9 @@
 
     <!-- Cases d'état pour couler tout les bateaux -->
     <case ligne="A" colonne="1"/>
-    <!-- <case ligne="B" colonne="1"/>
+    <case ligne="B" colonne="1"/>
     <case ligne="C" colonne="1"/>
-    <case ligne="D" colonne="1"/> -->
+    <case ligne="D" colonne="1"/>
     <case ligne="E" colonne="1"/>
     
     <case ligne="C" colonne="8"/>
@@ -73,7 +73,7 @@
     <case ligne="F" colonne="8"/>
     
     <case ligne="H" colonne="3"/>
-    <!-- <case ligne="H" colonne="4"/>
+    <case ligne="H" colonne="4"/>
     <case ligne="H" colonne="5"/>
     <case ligne="H" colonne="6"/>
     
@@ -99,5 +99,5 @@
     <case ligne="J" colonne="6"/>
     
     <case ligne="I" colonne="6"/>
-    <case ligne="J" colonne="6"/> -->
+    <case ligne="J" colonne="6"/>
 </grille>
