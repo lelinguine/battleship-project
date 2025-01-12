@@ -95,11 +95,12 @@
                             <!-- Afficher les bateaux touchés ou coulés -->
                             <p>
                                 <xsl:for-each select="grille/bateau">
-                                    <!-- Sélectionner les cases touchées du bateau -->
-                                    <xsl:variable name="casesTouchees" select="case[@ligne = /grille/case/@ligne and @colonne = /grille/case/@colonne]" />
-
+                                    <!-- Sélectionner les cases de la grille qui touchent les cases du bateau actuel -->
+                                    <xsl:variable name="casesTouchees" 
+                                                select="ancestor::grille/case[@ligne = current()/case/@ligne 
+                                                                                and @colonne = current()/case/@colonne]" />
                                     <xsl:choose>
-                                        <!-- Si toutes les cases sont touchées, le bateau est coulé -->
+                                        <!-- Si toutes les cases du bateau sont touchées, le bateau est coulé -->
                                         <xsl:when test="count(case) = count($casesTouchees)">
                                             Coulé [<xsl:value-of select="@type" />];
                                         </xsl:when>
